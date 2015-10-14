@@ -1,0 +1,77 @@
+ {% extends "cryptapp/base.html" %}
+
+{% block content %}
+
+ <!-- Start Contact Section -->
+        
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>Feedback</h3>
+                            
+                        </div>
+                    <br><br><br>
+                    
+                        <div class = "row">
+                        <div class="col-md-12">
+                            <form name="sentMessage" id="contactForm" novalidate>
+                                <div class = "row form-group">
+                                    <label class="label-control"  for="competition_level">Name</label>
+                                </div>
+                                
+                                <div class ="row">    
+                                    <div class="form-group col-md-7">
+                                        <input type="text" class="form-control" placeholder="Your name here *" id="name" required data-validation-required-message="Please enter your name.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+
+                                <div class = "row form-group">
+                                    <label class="label-control"  for="competition_level">E-mail</label>
+                                </div>
+                                
+                                <div class ="row">    
+                                    <div class="form-group col-md-7">
+                                        <input type="email" class="form-control" placeholder="example@domain.com" id="name" required data-validation-required-message="Please enter your name.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+
+                                
+                                <div class = "row form-group">
+                                    <label class="label-control"  for="competition_level">Feedback</label>
+                                </div>    
+                                <div class="row">
+                                    <div class="form-group col-md-7">
+                                        <textarea class="form-control" id="message" placeholder="Your feedback here *" required data-validation-required-message="Please enter some text."></textarea>
+                                        <p class="help-block text-danger" ></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="clearfix"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <div id="success"></div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    
+                               <br><br><br><br> 
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        <!-- End Contact Section -->
+{% endblock content %}
+       

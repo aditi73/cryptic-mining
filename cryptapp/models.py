@@ -49,3 +49,13 @@ class st_4word(models.Model):
 
 class three_word(models.Model):
 	word = models.CharField(max_length=200)
+
+class faq(models.Model):
+    feedback = models.CharField(max_length=200)
+    name = models.TextField(max_length=50)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
