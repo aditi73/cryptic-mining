@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.utils import timezone
+from .models import fback
+from .forms import FbackForm
+
 
 # Create your views here.
 def main_page(request):
@@ -20,4 +24,5 @@ def contact(request):
     return render(request, 'cryptapp/contact.html', {})
 
 def feedback(request):
-    return render(request, 'cryptapp/feedback.html', {})
+    form = FbackForm()
+    return render(request, 'cryptapp/feedback.html', {'form': form})

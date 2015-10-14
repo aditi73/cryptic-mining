@@ -21,8 +21,10 @@
                     <br><br><br>
                     
                         <div class = "row">
-                        <div class="col-md-12">
-                            <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="col-md-8 col-md-offset-4">
+
+                            <form name="sentMessage" id="contactForm" method="POST">{% csrf_token %}
+                                {{ form.as_p }}
                                 <div class = "row form-group">
                                     <label class="label-control"  for="competition_level">Name</label>
                                 </div>
@@ -40,7 +42,7 @@
                                 
                                 <div class ="row">    
                                     <div class="form-group col-md-7">
-                                        <input type="email" class="form-control" placeholder="example@domain.com" id="name" required data-validation-required-message="Please enter your name.">
+                                        <input type="email" class="form-control" placeholder="example@domain.com" id="email" required data-validation-required-message="Please enter your email.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
