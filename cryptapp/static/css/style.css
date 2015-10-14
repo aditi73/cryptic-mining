@@ -87,14 +87,34 @@ fieldset[disabled] .btn-primary.active {
     border-color: #FF432E;
     background-color: #FF432E;
 }
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.form{
+    background:#f1f1f1; width:470px; margin:0 auto; padding-left:50px; padding-top:20px;
+    padding-right:50px;
+}
+
+.form-group textarea.form-control {
+    height: 200px;
+}
 
 
+.form-group label.label-control {
+    color: #666 !important;
+    //font-style: italic;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+}
 /**** Start Section Title Section ****/
 
 .section-title h3{
     color: #666 !important;
     //font-style: italic;
-    font-size: 28px;
+    font-size: 30px;
     font-family: 'Oswald', sans-serif;
     text-transform: none;
 }
@@ -154,7 +174,9 @@ fieldset[disabled] .btn-primary.active {
 .purple{
     background: #9B59B6;
 }
-
+.white-bg{
+    background:#ffffff !important;
+}
 
 /**** Start Main Body Section ****/
 
@@ -889,7 +911,7 @@ and (max-width : 991px) {
 }
 
 .contact .form-group textarea.form-control {
-    height: 236px;
+    height: auto;
 }
 
 .contact::-webkit-input-placeholder {
