@@ -105,6 +105,17 @@ fieldset[disabled] .btn-primary.active {
     font-family: 'Oswald', sans-serif;
     text-transform: none;
 }
+
+.container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
 /**** Start Section Title Section ****/
 
 .section-title h3{

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import fback
 from .forms import FbackForm
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -23,6 +24,9 @@ def issues(request):
 def contact(request):
     return render(request, 'cryptapp/contact.html', {})
 
+def thanks(request):
+	return render(request, 'cryptapp/thanks.html', {})
+
 def feedback(request):
     if request.method == 'POST':
         form = FbackForm(data=request.POST)
@@ -30,7 +34,7 @@ def feedback(request):
             fb = form.save(commit = False)
             fb.published_date = timezone.now()
             fb.save()
-            
+            return HttpResponseRedirect('/thanks/') 
     else:
         form = FbackForm()
     return render(request, 'cryptapp/feedback.html', {'form': form})
