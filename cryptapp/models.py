@@ -51,9 +51,10 @@ class three_word(models.Model):
 	word = models.CharField(max_length=200)
 
 class fback(models.Model):
-    feedback = models.CharField(max_length=200)
-    name = models.TextField(max_length=50)
+    
+    name = models.CharField(max_length=50)
     email = models.CharField(max_length=100,default="")
+    feedback = models.TextField(max_length=200)
     published_date = models.DateTimeField(
             blank=True, null=True)
 

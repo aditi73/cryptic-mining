@@ -24,5 +24,13 @@ def contact(request):
     return render(request, 'cryptapp/contact.html', {})
 
 def feedback(request):
-    form = FbackForm()
+    if request.method == 'POST':
+        form = FbackForm(data=request.POST)
+        if form.is_valid():
+            fb = form.save(commit = False)
+            fb.published_date = timezone.now()
+            fb.save()
+            
+    else:
+        form = FbackForm()
     return render(request, 'cryptapp/feedback.html', {'form': form})
