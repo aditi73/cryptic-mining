@@ -40,7 +40,7 @@ def feedback(request):
         form = FbackForm()
     return render(request, 'cryptapp/feedback.html', {'form': form})
 
-def get_input(request):
+def system(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
