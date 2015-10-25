@@ -61,3 +61,6 @@ class fback(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+
+class system(models.Model):
+	cipher = models.CharField(max_length=200)

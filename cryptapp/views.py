@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import fback
 from .forms import FbackForm
+from .forms import SystemForm
 from django.http import HttpResponseRedirect
 
 
@@ -38,3 +39,23 @@ def feedback(request):
     else:
         form = FbackForm()
     return render(request, 'cryptapp/feedback.html', {'form': form})
+
+def get_input(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = SystemForm(data=request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            fb = form.save(commit = False)
+            fb.save()
+            return HttpResponseRedirect('/thanks/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = SystemForm()
+
+    return render(request, 'cryptapp/system.html', {'form': form})
