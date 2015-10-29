@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 
 class three_letter_noun(models.Model):
@@ -63,4 +64,5 @@ class fback(models.Model):
         self.save()
 
 class system(models.Model):
-	cipher = models.CharField(max_length=200)
+	alpha = RegexValidator(r'^[A-Za-z ]*$','Only contain alphabets')
+	cipher = models.CharField(max_length=200,validators=[alpha])

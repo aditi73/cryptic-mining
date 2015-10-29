@@ -4,6 +4,8 @@ from .models import fback
 from .forms import FbackForm
 from .forms import SystemForm
 from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
+import re
 
 
 # Create your views here.
@@ -40,6 +42,7 @@ def feedback(request):
         form = FbackForm()
     return render(request, 'cryptapp/feedback.html', {'form': form})
 
+
 def system(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -52,10 +55,23 @@ def system(request):
             # redirect to a new URL:
             fb = form.save(commit = False)
             fb.save()
-            return HttpResponseRedirect('/thanks/')
+            cd = form.cleaned_data
+            #vcipher=valid_cipher(cd.get('cipher'))
+            return render_to_response('cryptapp/system_feature.html',{'form':form})
+            #return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SystemForm()
 
     return render(request, 'cryptapp/system.html', {'form': form})
+
+#to check whether cipher is valid or not
+# def valid_cipher(c):
+#     res=""
+#     match = re.match(r'^[A-Za-z ]*$', c)
+#     if not match:
+#         res="Invalid CipherText"
+#     else:
+#         res="Valid CipherText"
+#     return res
