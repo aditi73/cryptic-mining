@@ -18,7 +18,8 @@ class SystemForm(forms.ModelForm):
 
     class Meta:
         model = system
-        fields = ('cipher',)
+        fields = ('cipher','result')
         widgets = {
             'cipher': forms.TextInput(attrs={'class': 'form-control'}),
+            'result': forms.Textarea(attrs={'class': 'form-control'}),
             }

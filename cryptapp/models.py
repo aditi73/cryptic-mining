@@ -66,3 +66,4 @@ class fback(models.Model):
 class system(models.Model):
 	alpha = RegexValidator(r'^[A-Za-z ]*$','Only contain alphabets')
 	cipher = models.CharField(max_length=200,validators=[alpha])
+	result = models.TextField(default="")

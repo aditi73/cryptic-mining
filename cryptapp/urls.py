@@ -10,4 +10,5 @@ urlpatterns = [
    url(r'^contact/', views.contact, name='contact'),
    url(r'^feedback/', views.feedback, name='feedback'),
    url(r'^thanks/', views.thanks, name='thanks'),
+   url(r'^result/', views.result, name='result'),
 ]

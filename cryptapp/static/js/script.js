@@ -13,5 +13,17 @@ $(document).ready(function ($) {
         });
     }, {accY: -100});
         
-        
+    var frm = $('#SystemForm');
+    $("#click").click(function () {
+        $.ajax({
+            url:'/system/',
+            success: function (data) {
+                $("#result").html(data);
+            },
+            error: function(data) {
+                $("#result").html("Something went wrong!");
+            }
+        });
+        return false;
+    });    
 });
