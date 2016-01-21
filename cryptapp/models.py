@@ -38,6 +38,8 @@ class I_4word(models.Model):
 
 class single_word(models.Model):
 	word = models.CharField(max_length=200)
+	def __str__(self):
+	 	return self.word
 
 class st_2word(models.Model):
 	word = models.CharField(max_length=200)
@@ -56,6 +58,20 @@ class fback(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=100,default="")
     feedback = models.TextField(max_length=200)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+class contact(models.Model):
+    
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=100,default="")
+    phone = models.CharField(max_length=15)
+    message = models.TextField(max_length=200)
+
     published_date = models.DateTimeField(
             blank=True, null=True)
 

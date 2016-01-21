@@ -16,19 +16,29 @@
                     <div class="row">
                         <div class="section-title text-center">
                             <h3>Contact With Us</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate</p>
                         </div>
                     </div>
+
                     <div class="row">
-                        
+                        <div class="col-md-4">
+                            <div class="footer-social text-center">
+                                <ul>
+                                        <li><a href="https://www.facebook.com/aditi.thakur.16100" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/aditi_73" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://in.linkedin.com/pub/aditi-thakur/9a/84/306" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/aditi73" target="_blank"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://plus.google.com/u/0/100225110041523286243/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="footer-contact-info">
                                 <h4>Contact info</h4>
                                 <ul>
-                                    <li><strong>E-mail :</strong> your-email@mail.com</li>
-                                    <li><strong>Phone :</strong> +8801-6778776</li>
-                                    <li><strong>Mobile :</strong> +8801-45565378</li>
-                                    <li><strong>Web :</strong> yourdomain.com</li>
+                                    <li><strong>E-mail :</strong> crypt_app@gmail.com</li>
+                                    <li><strong>Phone :</strong> +91-8982327040</li>
+                                    <li><strong>Mobile :</strong> +91-9575999716</li>
+                                    <li><strong>Web :</strong> </li>
                                 </ul>
                             </div>
                         </div>
@@ -36,49 +46,40 @@
                         <div class="col-md-4">
                             <div class="footer-social text-center">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="https://www.facebook.com/kajol.maheshwari.1" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/maheshwarikajol" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/pub/kajol-maheshwari/21/859/530" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/kmaheshwari" target="_blank"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://plus.google.com/u/0/+KajolMaheshwari07/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                         
-                        <div class="col-md-4">
-                            <div class="footer-contact-info">
-                                <h4>Working Hours</h4>
-                                <ul>
-                                    <li><strong>Mon-Wed :</strong> 9 am to 5 pm</li>
-                                    <li><strong>Thurs-Fri :</strong> 12 pm to 10 pm</li>
-                                    <li><strong>Sat :</strong> 9 am to 3 pm</li>
-                                    <li><strong>Sunday :</strong> Closed</li>
-                                </ul>
-                            </div>
-                        </div>
                         
                     </div><!--/.row -->
                     <div class="row" style="padding-top: 80px;">
                         <div class="col-md-12">
-                            <form name="sentMessage" id="contactForm" novalidate>
+                            <form action = "/contact/" id="ContactForm" method="POST">{% csrf_token %}
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                            {{form.name}}
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                            {{form.email}}
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                            {{form.phone}}
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                            {{form.message}}
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>

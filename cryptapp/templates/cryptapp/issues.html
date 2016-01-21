@@ -1,0 +1,42 @@
+{% extends "cryptapp/base.html" %}
+
+{% block content %}
+ 
+        <!-- Start issues Section -->
+        <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>Issues/Limitations</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="well ">
+                        <div>
+                            <p>
+                        <h4><div class = "fa fa-pencil"></div>   Present system works fine for transposition cipher and substitution cipher, but cipher types are more than two. This will require testing with different algorithm, method and cipher text.</h4>
+                        <br>
+
+                        <h4><div class = "fa fa-pencil"></div>  Incorporating plain-text of multiple languages in the process is also desirable. That is, current elucidation demonstrated in this work deciphers and outputs result in English. But over the communication channel languages local, non-English languages are also exchanged. For decryption of cipher text yielding other language plain text, the grammar rules of that particular language has to be applied.</h4>
+                        <br>
+                        <h4><div class = "fa fa-pencil"></div>   Extension of character set with adding special characters and symbols will make the current system more flexible. The reason behind this is, day-by-day increasing amount of data transferred, and the need to encrypt it in a more complex way is mandatory for securing information from unauthorized users. Hence special characters and numbers are used to generate a more complex cipher patterns.</h4>
+                        <br>
+                        <h4><div class = "fa fa-pencil"></div>   Extension for n-gram (n>4) will increase the power of cipher analysis. That is checking cipher words with having length more than 4 and words which are not present in any knowledge source, needs to be worked out. Currently the Knowledge source, include files having upto 4-letter words. </h4> 
+
+                        
+                    </p>
+                    </div>
+                    </div>
+                    <br><br>                
+                
+         </div>   
+        <!-- End Feature Section -->
+               
+{% endblock content %}          

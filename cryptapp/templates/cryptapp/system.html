@@ -1,7 +1,10 @@
- {% extends "cryptapp/base.html" %}
+{% extends "cryptapp/base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 
+        
+    
  <!-- Start System Section -->
         <div class="section-modal">
             <div class="modal-content">
@@ -19,12 +22,11 @@
                             <h3>System</h3>
                             
                         </div>
-                    <br><br><br>
+                    <br><br>
                     
                         <div class = "row">
                         <div class="col-md-8 col-md-offset-4 col-xs-8 col-xs-offset-4">
 
-                            <form action = "/system/" id="SystemForm" method="POST">{% csrf_token %}
 
 
                                 <!-- <div class = "row form-group">
@@ -38,7 +40,9 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div> -->
-                            <form name="sentMessage" id="contactForm" novalidate>
+
+                                
+                            
                                 <div class = "row form-group">
                                     <label class="label-control"  for="cipher">Cipher Text</label>
                                 </div>
@@ -46,47 +50,57 @@
                                 <div class ="row">    
                                     <div class="form-group col-md-7">
                                          <!-- <input type="text" class="form-control" placeholder="Encrypted text here *" id="cipher" required data-validation-required-message="Please enter some text."> -->
-                                        <input id="cipher" name="cipher" type="text" value="{{ form.cipher.value }}">
+                                        <input id="cipher" name="cipher" type="text" size="52" >
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
 
+                                <div class = "row form-group">
+                                    <label class="label-control"  for="result">Result</label>
+                                </div>    
+                                <div class="row">
+                                    <div class="form-group col-md-7" >
+                                           <b><div id="result" class="result" style="border:1px solid grey;height:30px;padding:10px;"></div></b>
+                                        
+                                        <p class="help-block text-danger" ></p>
+                                    </div>
+                                </div>
                                 <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
                                         <div id="success"></div>
-                                        <button type="submit" class="btn btn-primary">Decrypt</button>
+                                        <button type="submit" class="btn btn-primary" id="click">Decrypt</button>
+                                        <button class="btn btn-primary" type="reset">Reset</button>
                                     </div>
-                                
-                                <!-- <div class = "row form-group">
-                                    <label class="label-control"  for="competition_level">Output</label>
-                                </div>    
-                                <div class="row">
-                                    <div class="form-group col-md-7">
-                                        <textarea class="form-control" id="message" readonly="readonly"></textarea>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                
-                                <div class = "row form-group">
-                                    <label class="label-control">Result</label>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="form-group col-md-7">
-                                        <input type="text" class="form-control" readonly="">
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-
+                                <script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+                                <script>
                                     
-                               <br><br><br><br> 
-                            </form> 
-                             <div class="clearfix"></div>
-                                    <div class="col-lg-12 text-center">
-                                        <div id="success"></div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                     -->
+                                    // alert(ctext);
+                                    
+                                    $("#click").click(function (e) {
+                                        var cipher = $("#cipher").val();
+                                        
+                                        e.preventDefault();
+                                        request_url = cipher + "/";
+                                        //var ctext = $('#ciper').val();
+                                        $.ajax({
+                                            type: "GET",
+                                            url:request_url,
+                                            
+                                            
+                                            success: function (data) {
+                                                data: $.parseJSON(data), 
+                                                $('#result').html(data);
+                                                
+                                            },
+                                            error: function(data) {
+                                                $("#result").html("Something went wrong!");
+                                            }
+                                        });
+                        
+                                    });    
+                                </script>
+                                
+                                
                                <br><br><br><br> 
                             </form>
                         </div>
@@ -98,5 +112,5 @@
             </div>
         
         <!-- End System Section -->
+}
 {% endblock content %}
-       
