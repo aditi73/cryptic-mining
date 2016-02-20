@@ -222,10 +222,10 @@ fieldset[disabled] .btn-primary.active {
 .menu-item:hover a {
     text-decoration: none;
     //color: #333;
-    animation: wobble;
+    /*animation: wobble;
     -webkit-animation: wobble;
     animation-duration: 1000ms;
-    -webkit-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;*/
 }
 
 @media only screen 
@@ -701,6 +701,7 @@ and (max-width : 991px) {
     margin-left: 0px;
     padding-right: 30px;
     float: left;
+
 }
 
 .team-details {
@@ -716,7 +717,7 @@ and (max-width : 991px) {
 
 .team-member img {
     width: 100%;
-    height: auto;
+    height: 250px;
 }
 
 .team-details h4 {
@@ -762,6 +763,7 @@ and (max-width : 991px) {
     animation-duration: 300ms;
     -webkit-animation-duration: 300ms;
 }
+
 
 
 
@@ -990,3 +992,4 @@ and (max-width : 991px) {
     padding: 20px;
     color: #fff;
 }
+

@@ -484,7 +484,7 @@ def main():
                         if len(s1[i+1])==4:
                             nf.append(s1[i+1])
                             pat_rep(nf,nfw,cntn4)
-            
+            return sent
             if (t_d==1 or trans_cnt>0 ) :                
                 # for words having three letters
                 for word in sent.split():
@@ -494,35 +494,35 @@ def main():
                 if three_w:
                     pat_rep(three_w,trw,cnt3)
                     
-                # for words havin double letter
-                # for word in sent.split():
-                #     if (len(word) > 2):
-                #         double_letter(word)
+            #     # for words havin double letter
+            #     # for word in sent.split():
+            #     #     if (len(word) > 2):
+            #     #         double_letter(word)
 
-                # for words having four letters
-                for word in sent.split():
-                    if ((len(word) == 4) and (word not in four_w) ):
-                        if not word.isupper():
-                            four_w.append(word)
-                if four_w:
-                    pat_rep(four_w,fw,cnt4)
+            #     # for words having four letters
+            #     for word in sent.split():
+            #         if ((len(word) == 4) and (word not in four_w) ):
+            #             if not word.isupper():
+            #                 four_w.append(word)
+            #     if four_w:
+            #         pat_rep(four_w,fw,cnt4)
 
-                for word in sent.split():
-                    if ((len(word) > 4) and (word not in gfour_w) ):
-                        if not word.isupper():
-                            gfour_w.append(word)
-                if gfour_w:
-                    for i in range(len(gfour_w)):
-                        for j in range(0,2):
-                            if gfour_w[i][j].islower():
-                                if i==1:
-                                    if gfour_w[i][j+1].islower():
-                                        pfour_w.append(gfour_w[i][:3])
-                                    else:
-                                        pfour_w.append(gfour_w[i][:2])
-                                break
-                        if pfour_w:
-                            pat_rep(pfour_w,pfw,cntp)
+            #     for word in sent.split():
+            #         if ((len(word) > 4) and (word not in gfour_w) ):
+            #             if not word.isupper():
+            #                 gfour_w.append(word)
+            #     if gfour_w:
+            #         for i in range(len(gfour_w)):
+            #             for j in range(0,2):
+            #                 if gfour_w[i][j].islower():
+            #                     if i==1:
+            #                         if gfour_w[i][j+1].islower():
+            #                             pfour_w.append(gfour_w[i][:3])
+            #                         else:
+            #                             pfour_w.append(gfour_w[i][:2])
+            #                     break
+            #             if pfour_w:
+            #                 pat_rep(pfour_w,pfw,cntp)
 
 
                     
